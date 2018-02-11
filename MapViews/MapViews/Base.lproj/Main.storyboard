@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13771" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13772"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--View Controller-->
+        <scene sceneID="tne-QT-ifu">
+            <objects>
+                <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="MapViews" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <mapView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" mapType="standard" translatesAutoresizingMaskIntoConstraints="NO" id="iVm-Jt-g10">
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="592"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="592" id="SWj-Ja-BUA"/>
+                                </constraints>
+                            </mapView>
+                            <segmentedControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="zTu-AS-1sZ">
+                                <rect key="frame" x="0.0" y="619" width="375" height="29"/>
+                                <segments>
+                                    <segment title="Normal"/>
+                                    <segment title="Satelite"/>
+                                    <segment title="Hybrid"/>
+                                </segments>
+                                <connections>
+                                    <action selector="selectMapType:" destination="BYZ-38-t0r" eventType="valueChanged" id="Bbp-F5-QIr"/>
+                                </connections>
+                            </segmentedControl>
+                        </subviews>
+                        <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstItem="iVm-Jt-g10" firstAttribute="leading" secondItem="zTu-AS-1sZ" secondAttribute="leading" id="AEp-df-x6U"/>
+                            <constraint firstItem="iVm-Jt-g10" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="Bjx-2f-3P0"/>
+                            <constraint firstItem="iVm-Jt-g10" firstAttribute="trailing" secondItem="6Tk-OE-BBY" secondAttribute="trailing" id="nxn-tT-miR"/>
+                            <constraint firstItem="zTu-AS-1sZ" firstAttribute="top" secondItem="iVm-Jt-g10" secondAttribute="bottom" constant="27" id="qeQ-5K-yrE"/>
+                            <constraint firstItem="iVm-Jt-g10" firstAttribute="top" secondItem="8bC-Xf-vdC" secondAttribute="top" id="tpq-fS-X7n"/>
+                            <constraint firstItem="iVm-Jt-g10" firstAttribute="trailing" secondItem="zTu-AS-1sZ" secondAttribute="trailing" id="uoJ-nR-Sa7"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
+                    </view>
+                    <connections>
+                        <outlet property="MapView" destination="iVm-Jt-g10" id="et6-ss-THc"/>
+                        <outlet property="SegmentMapType" destination="zTu-AS-1sZ" id="Aku-4Y-4a4"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="136.80000000000001" y="132.68365817091455"/>
+        </scene>
+    </scenes>
+</document>
